@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::middleware(['auth:sanctum', 'universitas'])->get('/user', [UserController::class,'index']);
+Route::middleware(['auth:sanctum', 'universitas'])->get('/user/create', [UserController::class,'create']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/user/store', [UserController::class,'store']);
+Route::middleware(['auth:sanctum', 'universitas'])->get('/user/edit/{id}', [UserController::class,'edit']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/user/update/{id}', [UserController::class,'update']);
+Route::middleware(['auth:sanctum', 'universitas'])->get('/user/editpassword/{id}', [UserController::class,'editpassword']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/user/updatepassword/{id}', [UserController::class,'updatepassword']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/user/destroy/{id}', [UserController::class,'destroy']);
