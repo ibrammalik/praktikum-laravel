@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,10 @@ Route::middleware(['auth:sanctum', 'universitas'])->post('/fakultas/store',[Faku
 Route::middleware(['auth:sanctum', 'universitas'])->get('/fakultas/edit/{id}',[FakultasController::class,'edit']);
 Route::middleware(['auth:sanctum', 'universitas'])->post('/fakultas/update/{id}',[FakultasController::class,'update']);
 Route::middleware(['auth:sanctum', 'universitas'])->post('/fakultas/destroy/{id}',[FakultasController::class,'destroy']);
+
+Route::middleware(['auth:sanctum', 'universitas'])->get('/prodi',[ProdiController::class,'index']);
+Route::middleware(['auth:sanctum', 'universitas'])->get('/prodi/create',[ProdiController::class,'create']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/prodi/store',[ProdiController::class,'store']);
+Route::middleware(['auth:sanctum', 'universitas'])->get('/prodi/edit/{id}',[ProdiController::class,'edit']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/prodi/update/{id}',[ProdiController::class,'update']);
+Route::middleware(['auth:sanctum', 'universitas'])->post('/prodi/destroy/{id}',[ProdiController::class,'destroy']);
