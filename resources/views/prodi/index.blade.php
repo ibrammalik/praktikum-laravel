@@ -26,7 +26,7 @@
                         @forelse($prodi as $item)
                         <tr>
                             <td class="border px-6 py-4 ">
-                                {{ $item->fakultas->nama_fakultas }}
+                                {{ $item->fakultas->nama_fakultas ?? 'DIHAPUS' }}
                             </td>
 
                             <td class="border px-6 py-4 ">
