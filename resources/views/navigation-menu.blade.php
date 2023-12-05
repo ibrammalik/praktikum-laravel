@@ -23,6 +23,9 @@
                     <x-jet-nav-link href="{{ url('/fakultas') }}" :active="request()->routeIs('fakultas')">
                         {{ __('Fakultas') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ url('/prodi') }}" :active="Str::contains(request()->url(), 'prodi')">
+                        {{ __('Prodi') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -169,6 +172,9 @@
             <x-jet-nav-link href="{{ url('/fakultas') }}" :active="request()->routeIs('fakultas')">
                 {{ __('Fakultas') }}
             </x-jet-nav-link>
+            <x-jet-responsive-nav-link href="{{ url('/prodi') }}" :active="Str::contains(request()->url(), 'prodi')">
+                {{ __('Prodi') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
