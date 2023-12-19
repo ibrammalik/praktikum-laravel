@@ -26,6 +26,12 @@
                     <x-jet-nav-link href="{{ url('/prodi') }}" :active="Str::contains(request()->url(), 'prodi')">
                         {{ __('Prodi') }}
                     </x-jet-nav-link>
+                    @if(Auth::user()->role=='UNIVERSITAS')
+                    <x-jet-nav-link href="{{ url('/pendaftaran') }}"
+                        :active="Str::contains(request()->url(), 'pendaftaran')">
+                        {{ __('Pendaftaran') }}
+                    </x-jet-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -175,6 +181,11 @@
             <x-jet-responsive-nav-link href="{{ url('/prodi') }}" :active="Str::contains(request()->url(), 'prodi')">
                 {{ __('Prodi') }}
             </x-jet-responsive-nav-link>
+            @if(Auth::user()->role=='UNIVERSITAS')
+            <x-jet-nav-link href="{{ url('/pendaftaran') }}" :active="Str::contains(request()->url(), 'pendaftaran')">
+                {{ __('Pendaftaran') }}
+            </x-jet-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
